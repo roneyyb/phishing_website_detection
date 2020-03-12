@@ -15,17 +15,12 @@ router.post('/getphishingurl', async (req, res) => {
         params.forEach(element => {
             command += element + " "
         });
-        console.log(command)
+        console.log(command);
         cp.exec(command, { cwd: "nlp/" }, (err, stdout, stderr) => {
             console.log(stderr);
             console.log(stdout);
             res.status(200).send({predicted:stdout});
-        })
-
-
-        
-      
-      
+        }) 
     }
     catch(e){
         console.log(e);

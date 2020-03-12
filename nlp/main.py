@@ -195,7 +195,7 @@ loaded_classifier.load_weights("classifier.h5")
 
 loaded_classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 output = loaded_classifier.predict(all_feature)
-print(output)
+print(output>0.95)
 
 # file_list = ["data_legitimate_36400.json","data_phishing_37175.json"]
 
