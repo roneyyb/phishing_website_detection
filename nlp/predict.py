@@ -25,10 +25,10 @@ loaded_classifier = model_from_json(loaded_classifier_json)
 loaded_classifier.load_weights("classifier.h5")
 
 predict = sys.argv[1].split(',')
-length = predict.length/30
+# length = predict.length/30
 features = []
-for(i in range(0,length)):
-    predict.slice(i*30,i*30+30)
+# for(i in range(0,length)):
+#     predict.slice(i*30,i*30+30)
     
 loaded_classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 output = loaded_classifier.predict(predict)

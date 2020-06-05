@@ -9,7 +9,7 @@ router.post("/getphishingurl", async (req, res) => {
   try {
     const url = req.body.url;
     let params = url;
-    var command = "python3 -m pipenv run predict ";
+    var command = "python3 predict.py ";
     params.forEach((element) => {
       command += element + " ";
     });
