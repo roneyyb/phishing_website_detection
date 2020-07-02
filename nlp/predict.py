@@ -23,9 +23,11 @@ json_file.close()
 loaded_classifier = model_from_json(loaded_classifier_json)
 # load weights into new classifier
 loaded_classifier.load_weights("classifier.h5")
-
+print(sys.argv[1].split(','))
 predict = sys.argv[1].split(',')
-length = predict.length/30
+print(predict)
+length = predict.length / 30
+print(length)
 features = []
 for(i in range(0,length)):
     predict.slice(i*30,i*30+30)
